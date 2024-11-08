@@ -4,7 +4,7 @@
 1. **Clone the repository**:
    ```bash
    git clone <repo-url>
-   cd event_management
+   cd EventManagement
 
 2. Use Docker to run the app.
    ```bash
