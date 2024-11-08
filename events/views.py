@@ -43,13 +43,9 @@ class EventRegistrationViewSet(viewsets.ModelViewSet):
         serializer.save(user=user)
 
         # Send registration confirmation email
-        try:
-            send_mail(
-                subject=f"Confirmation: {event.title} Registration",
-                message=f"Hello {user.username},\n\nYou have successfully registered for {event.title}.",
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[user.email],
-            )
-            print('sent email success')
-        except:
-            print('not sent email')
+        send_mail(
+            subject=f"Confirmation: {event.title} Registration",
+            message=f"Hello {user.username},\n\nYou have successfully registered for {event.title}.",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+        )
