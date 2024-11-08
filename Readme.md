@@ -34,7 +34,8 @@ Use it in the `Authorization` header like so:
 API Docs:
 
 1. GET `/api/events/`: List all events.
-2. POST `/api/events/`: Create a new event (authenticated users only).
+2. GET `/api/events/?search=<search_word>`: Search events with search word by fields: title, description, location.
+3. POST `/api/events/`: Create a new event (authenticated users only).
 Example data:
    ```bash
    {
@@ -45,14 +46,14 @@ Example data:
      "organizer": 1  # user_id
    }
 
-3. GET `/api/events/{id}/`: Retrieve details of a specific event.
-4. PUT `/api/events/{id}/`: Update an existing event.
-5. DELETE `/api/events/{id}/`: Delete an event.
-6. GET `/api/registrations/`: List all event registrations.
+4. GET `/api/events/{id}/`: Retrieve details of a specific event.
+5. PUT `/api/events/{id}/`: Update an existing event.
+6. DELETE `/api/events/{id}/`: Delete an event.
+7. GET `/api/registrations/`: List all event registrations.
 
-7. POST `api/registrations/<event_id>/register/`: Register a user for an event.
+8. POST `api/registrations/<event_id>/register/`: Register a user for an event.
    ```bash
    {
      "user": 1,  # user_id
    }
-8. GET `/api/registrations/<registration_id>`: Check registration info by id.
+9. GET `/api/registrations/<registration_id>`: Check registration info by id.
